@@ -27,7 +27,9 @@ The target Redfish services must also be configured to send Redfish events.
 
 ## Configuration
 
-The file `config.ini` contains a default configuration for the tool.  This can be used as a template for real configurations or edited as needed.
+The file `config.ini` contains a default minimum configuration for the tool.  This can be used as a template for real configurations or edited as needed.
+
+The `configurations` folder contains a fuller example of the `config.ini` file and other configuration versions can be stored here as well. See [Running the Tool](README.md#running-the-tool) section for CLI options.
 
 The configuration file is broken into different sections with different options.
 
@@ -67,6 +69,13 @@ The `ServerInformation` section contains information about the Redfish services 
 ## Running the Tool
 
 Execute using `python RedfishEventListener_v1.py`
+
+Command line options:
+
+|Short|Long|Definition|
+|----|---|----|
+|-c|--config|Location of the configuration file. Default is './config.ini'|
+|-v|--verbose|Verbose output.|
 
 Received event details will be captured on the console and recorded into a file named Events_<Service IP>.txt in the working directory.  Individual files will be generated for each subscribed service.
 
