@@ -29,6 +29,8 @@ The target Redfish services must also be configured to send Redfish events.
 
 The file `config.ini` contains a default configuration for the tool.  This can be used as a template for real configurations or edited as needed.
 
+Jump to [Running the Tool](#running-the-tool)
+
 The configuration file is broken into different sections with different options.
 
 The `Information` section contains details about the configuration file itself.  The tool does not parse any information in this section, and is used to help users track configuration files.  The following options are found in this section:
