@@ -43,7 +43,8 @@ config = {
     'format': None,
     'expand': None,
     'resourcetypes': None,
-    'registries': None
+    'registries': None,
+    'capture': True
 }
 
 ### Function to read data in json format using HTTP Stream reader, parse Headers and Body data, Response status OK to service and Update the output into file
@@ -114,6 +115,19 @@ def process_data(newsocketconn, fromaddr):
                         if 'MetricProperty' in metric:
                             my_logger.info("Metric Property is: %s", metric['MetricProperty'])
                         my_logger.info("\n")
+                ### Write events as individual files.
+                if 'Events' in outdata and config['capture']:
+                    event_array = outdata['Events']
+                    for event in event_array:
+                        now = datetime.now()
+                        t = now.strftime("_%m-%d-%y_%H%M%S")
+                        capturefile = "event_" + event['MessageId'] + t + ".json"
+                        try:
+                            fd = open(capturefile,"w")
+                            fd.write(json.dumps(event))
+                            fd.close()
+                        except Exception as err:
+                            print(err)
 
                 ### Check the context and send the status OK if context matches
                 if config['contextdetail'] is not None and outdata.get('Context', None) != config['contextdetail']:

@@ -1,8 +1,10 @@
 # Change Log
 
+## [1.1.4] - 2022-07-11
+- Added event capture feature.
+
 ## [1.1.3] - 2022-07-11
 - Corrected spelling of 'subscription'. Remove if-else referencing old spelling.
-
 
 ## [1.1.2] - 2022-06-02
 - Corrected usage of 'lower' method for the authentication type

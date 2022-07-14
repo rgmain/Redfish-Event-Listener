@@ -66,6 +66,8 @@ The `ServerInformation` section contains information about the Redfish services 
 * `Passwords`: An array of Redfish passwords for each of the listed Redfish services.  This must be the same array length as `ServerIPs`.
 * `LoginType`: An array of login types for each of the listed Redfish services.  Possible values are `Basic` and `Session`.  If not specified, `Session` is used.
 
+A default configuration is provided in the tool with an extra property, `capture`, which allows Redfish events to be captured as individual json files.
+
 ## Running the Tool
 
 Execute using `python RedfishEventListener_v1.py`
