@@ -68,6 +68,11 @@ The `ServerInformation` section contains information about the Redfish services 
 
 Execute using `python RedfishEventListener_v1.py`
 
+|Short|Long|Defintion|
+|----|---|----|
+|-c|--config|Location of the configuration file.|
+|-v|--verbose|Verbose output.|
+
 Received event details will be captured on the console and recorded into a file named Events_<Service IP>.txt in the working directory.  Individual files will be generated for each subscribed service.
 
 The tool can be stopped by issuing a keyboard interrupt (CTRL-C).
